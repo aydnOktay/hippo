@@ -1,0 +1,89 @@
+<%- include('layout/header',{categories: data.categories,contact:data.contactServicee}) %>
+
+	<!-- Page Title
+		============================================= -->
+	<section
+		class="page-title page-title-parallax parallax scroll-detect dark page-title-center include-header bg-overlay-mask"
+		style="padding: 170px 0 100px;">
+		<img src="/demos/store/heads/s56.jpg" class="parallax-bg">
+		<div class="container">
+			<div class="page-title-row">
+
+				<div class="page-title-content">
+					<h1 class="text-uppercase">Bize ulaşın</h1>
+					<span>İletişim</span>
+				</div>
+
+			</div>
+	</section><!-- .page-title end -->
+
+	<!-- Content
+		============================================= -->
+	<section id="content">
+		<div class="content-wrap pb-0">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-4 col-md-6">
+						<h2 class="h1 fw-bold mb-4">Hippo Rent Pro</h2>
+						<p>
+							<%= data?.contactServicee?.adress %>
+						</p>
+						<h4>
+							<%= data?.contactServicee?.citys %><br>
+						</h4>
+						<abbr title="Phone Number"><strong>Telefon :</strong></abbr>
+						<%= data?.contactServicee?.phone %><br>
+							<abbr title="Email Address"><strong>Email :</strong></abbr>
+							<%= data?.contactServicee?.email %><br>
+								<div class="mt-4">
+
+									<a href="<%= data?.contactServicee?.instagram %>"
+										class="social-icon si-small rounded-0 text-white bg-instagram"
+										title="instagram">
+										<i class="bi-instagram"></i>
+										<i class="bi-instagram"></i>
+									</a>
+
+									<a href="<%= data?.contactServicee?.youtube %>"
+										class="social-icon si-small rounded-0 text-white bg-google" title="youtube">
+										<i class="fa-brands fa-youtube"></i>
+										<i class="fa-brands fa-youtube"></i>
+									</a>
+								</div>
+					</div>
+
+					<div class="col-lg-7 col-md-6 mt-4 mt-md-0">
+						<img src="/demos/store/<%= data?.contactServicee?.contact_image %>" alt="image">
+					</div>
+				</div>
+				<div class="clear my-5"></div>
+
+			</div>
+			<div class="clear"></div>
+			<%- include('partials/videos') %>
+
+				<div class="section bg-transparent py-3">
+					<div class="container-fluid">
+						<div class="row justify-content-center m-auto" style="max-width: 1000px;">
+							<div class="col-md-7">
+								<p class="h6 mb-0 text-muted">Bütün ekipman kiralama işlemleri için bizimle iletişime
+									geçebilirsiniz <a href="mailto:noreply@canvas.com"><u>
+											<%= data?.contactServicee?.email %>
+										</u></a> email adresimiz </p>
+							</div>
+							<div class="col-md-5 mt-3 mt-md-0">
+								<h2 class="h1 fw-bold ls--1 color"><a href="">
+										<%= data?.contactServicee?.phone %>
+									</a></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
+		</div>
+	</section><!-- #content end -->
+
+	<%- include('layout/footer') %>

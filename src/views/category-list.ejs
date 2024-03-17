@@ -1,0 +1,118 @@
+<%- include('layout/header',{categories: data.categories}) %>
+
+  <section
+    class="page-title page-title-parallax parallax scroll-detect dark page-title-center include-header bg-overlay-mask"
+    style="padding: 170px 0 100px">
+    <img src="/demos/store/heads/s56.jpg" class="parallax-bg" />
+    <div class="container">
+      <div class="page-title-row">
+        <div class="page-title-content">
+          <h1 class="text-uppercase">Ekipman Kirala</h1>
+          <span> <%- data?.category?.category_name %> </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- .page-title end -->
+
+  <!-- Content
+============================================= -->
+  <section id="content">
+    <div class="content-wrap pb-0">
+      <div class="container-fluid mt-5">
+        <div class="row">
+          <div class="col-md-2 sticky-sidebar-wrap">
+          
+              <div
+              class="input-group  input-group-border-0 shadow-sm rounded-3 mb-4"
+              >
+                <input 
+              id="product-search-input"
+              name="search"
+              type="text" class="form-control" placeholder="Ara..." />
+              <button
+              class="btn btn-light"
+              type="button"
+              id="product-search-button"
+            >
+              Ara
+            </button>
+              </div>
+           
+            <ul class="list-unstyled items-nav sticky-sidebar shop-filter" data-container="#shop">
+              <li>
+                <a href="#" class="text-dark fw-semibold" data-filter="*">Kiralık Ekipmanlar</a>
+              </li>
+              <li>
+                <hr />
+              </li>
+
+              <% data?.categories?.forEach(element=> { %>
+                <li>
+                  <a href="/categories/<%- element?.slug %>" data-filter=".sf-jeans">
+                    <%- element.category_name %>
+                  </a>
+                </li>
+                <% }) %>
+            </ul>
+
+            <hr />
+          </div>
+
+        <div class="col-md-10">
+          <div id="shop" class="row shop grid-container" data-layout="fitRows">
+            <!-- Shop Item 1
+                        ============================================= -->
+            <% data?.products?.forEach(element => { %>
+            <div class="col-lg-3 col-md-4 mb-4 sf-shoes sf-sportswear sf-new">
+              <div class="product">
+                <a 
+                href="/products/<%- element?.product_slug %>">
+                  <img
+                    class="lazy"
+                    data-src="/demos/store/<%- element?.product_img %>"
+                    alt="<%- element?.product_name %>"
+                /></a>
+                </div>
+                <div class="product-desc" style="text-align: center">
+                  <div class="product-title">
+                    <h3><a href=""> <%- element?.product_name %> </a></h3>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section bg-transparent py-3">
+      <div class="container-fluid">
+        <div class="row justify-content-center m-auto" style="max-width: 1000px">
+          <div class="col-md-7">
+            <p class="h6 mb-0 text-muted">
+              Bütün ekipman kiralama işlemleri için bizimle iletişime
+              geçebilirsiniz
+              <a href="mailto:noreply@canvas.com"><u>
+                  <%- data?.contact?.email %>
+              </u></a>
+              email adresimiz
+            </p>
+          </div>
+          <div class="col-md-5 mt-3 mt-md-0">
+            <h2 class="h1 fw-bold ls--1 color">
+              <a href="tel:09876543211">
+                <%- data?.contact?.phone %>
+              </a>
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- #content end -->
+
+  <%- include('layout/footer') %>

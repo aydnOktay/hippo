@@ -1,0 +1,54 @@
+<%- include("./layout/header",{categories:data?.categories}) %>
+<div class="page-body">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="sub-title">Kategori Ekleme Bölümü</h4>
+          <br />
+          <form
+            method="POST"
+            action="/admin/category/updatee/<%- data.category._id %>"
+            enctype="multipart/form-data"
+          >
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Kategori Adı</label>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  name="category_name"
+                  class="form-control"
+                  value="<%- data.category.category_name %>"
+                />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Yeni Fotoğraf</label>
+              <div class="col-sm-10">
+                <input type="file" name="file" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Güncel Resim</label>
+              <div class="col-sm-10">
+                <img
+                  src="/demos/store/<%- data.category.category_image %>"
+                  alt=""
+                  width="230px"
+                  height="230px"
+                />
+              </div>
+            </div>
+
+            <button class="btn btn-outline-success" type="submit">
+              Güncelle !
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./layout/footer") %>

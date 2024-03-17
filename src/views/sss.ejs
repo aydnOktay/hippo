@@ -1,0 +1,73 @@
+<%- include('layout/header',{categories: data.categories,contact:data.contactServicee}) %>
+    <section class="page-title page-title-parallax parallax scroll-detect dark include-header"
+        style="padding: 250px 0;">
+        <img src="/demos/store/bannersss.jpg" class="parallax-bg">
+        <div class="container">
+            <div class="page-title-row">
+
+                <div class="page-title-content">
+                    <h1>S.S.S</h1>
+                    <span>Sık Sorulan Sorular</span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </section><!-- .page-title end -->
+
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container">
+
+                <div class="row col-mb-50 mb-0">
+
+                    <div class="col-lg-6">
+                        <div class="cascading-images">
+                            <div class="cascading-images-inner">
+                                <div class="cascading-image">
+                                    <div style="transform: translate(10%,-55%);">
+                                        <img src="/demos/store/sss1.jpg" alt="Image"
+                                            data-animate="zoomIn faster" class="rounded-3 shadow-lg">
+                                    </div>
+                                </div>
+                                <div class="cascading-image">
+                                    <div class="z-2" style="transform: translate(-25%, 0%) rotate(-10deg);">
+                                        <img src="/demos/store/sss2.jpg" alt="Image"
+                                            data-animate="zoomIn faster" data-delay="150" class="rounded-3 shadow-lg">
+                                    </div>
+                                </div>
+                                <div class="cascading-image">
+                                    <div style="transform: translate(28%, 35%) rotate(10deg);">
+                                        <img src="/demos/store/sss3.jpg" alt="Image"
+                                            data-animate="zoomIn faster" data-delay="300" class="rounded-3 shadow-lg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+
+                        <div class="accordion accordion-border" data-state="closed">
+                            <% data.sss.forEach(element => { %>
+                            <div class="accordion-header">
+                                <div class="accordion-icon">
+                                    <i class="accordion-closed bi-check-circle-fill"></i>
+                                    <i class="accordion-open bi-x-circle-fill"></i>
+                                </div>
+                                <div class="accordion-title">
+                                    <%= element.question %>
+                                </div>
+                            </div>
+                            <div class="accordion-content">
+                                <%= element.answer %>
+                            </div>
+                            <% }) %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <%- include('layout/footer') %>

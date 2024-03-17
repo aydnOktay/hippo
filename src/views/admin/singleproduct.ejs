@@ -1,0 +1,65 @@
+<%- include("./layout/header",{categories:data?.categories}) %>
+<div class="page-body">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5><%-data.category.category_name %></h5>
+          <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+              <li><i class="icofont icofont-simple-left"></i></li>
+              <li><i class="icofont icofont-maximize full-card"></i></li>
+              <li><i class="icofont icofont-minus minimize-card"></i></li>
+              <li><i class="icofont icofont-refresh reload-card"></i></li>
+              <li><i class="icofont icofont-error close-card"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-block table-border-style">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Ekipman Fotoğraf</th>
+                  <th>Ekipman Adı</th>
+                  <th>Düzenle</th>
+                  <th>Sil</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% data.products.forEach(element=> { %>
+                <tr>
+                  <td>
+                    <img
+                      src="/demos/store/<%- element.product_img %>"
+                      style="height: 50px; width: 50px; object-fit: contain"
+                      class="img-fluid"
+                      alt="Colorlib Template"
+                    />
+                  </td>
+                  <td><%- element.product_name %></td>
+                  <td>
+                    <a href="/admin/product/update/<%- element._id %>"
+                      ><button class="btn btn-success">
+                        <i class="icofont icofont-check-circled"></i></button
+                    ></a>
+                  </td>
+                  <td>
+                    <a
+                      href="/admin/product/delet/<%- element._id %>/<%- data.category._id%>"
+                    >
+                      <button class="btn btn-danger">
+                        <i class="icofont icofont-eye-alt"></i></button
+                    ></a>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./layout/footer") %>

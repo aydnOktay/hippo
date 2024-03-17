@@ -1,0 +1,62 @@
+<%- include("./layout/header",{categories:data?.categories}) %>
+<div class="page-body">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Slider Mobil</h5>
+          <span>Önerilen 16:9</span>
+          <hr />
+          <a href="/admin/mobile/homepageMobileAdd">
+            <button class="btn btn-success">
+              <i class="icofont icofont-check-circled"></i> Fotoğraf Ekle
+            </button></a
+          >
+          <div class="card-header-right">
+            <ul class="list-unstyled card-option">
+              <li><i class="icofont icofont-simple-left"></i></li>
+              <li><i class="icofont icofont-maximize full-card"></i></li>
+              <li><i class="icofont icofont-minus minimize-card"></i></li>
+              <li><i class="icofont icofont-refresh reload-card"></i></li>
+              <li><i class="icofont icofont-error close-card"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-block table-border-style">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Fotoğraf</th>
+                  <th>Sil</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% data.homepageslider.forEach(element=> { %>
+                <tr>
+                  <td>
+                    <img
+                      src="/demos/store/<%- element.slider_image %>"
+                      style="height: 50px; width: 50px; object-fit: contain"
+                      class="img-fluid"
+                      alt="Colorlib Template"
+                    />
+                  </td>
+                  <td>
+                    <a href="/admin/mobile/delete/<%- element.id %>">
+                      <button class="btn btn-danger">
+                        <i class="icofont icofont-eye-alt"></i>
+                      </button>
+                    </a>
+                  </td>
+                </tr>
+                <% }) %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./layout/footer") %>

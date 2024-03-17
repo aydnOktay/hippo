@@ -1,0 +1,68 @@
+<%- include("./layout/header",{categories:data?.categories}) %>
+  <div class="page-body">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-block">
+            <h4 class="sub-title">İletişim</h4>
+            <br />
+            <form method="POST" action="/admin/contact/update" enctype="multipart/form-data">
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Adres</label>
+                <div class="col-sm-10">
+                  <input type="text" name="adress" class="form-control" value="<%- data.contact.adress %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">il / İlçe</label>
+                <div class="col-sm-10">
+                  <input type="text" name="citys" class="form-control" value="<%- data.contact.citys %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Telefon</label>
+                <div class="col-sm-10">
+                  <input type="text" name="phone" class="form-control" value="<%- data.contact.phone %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="text" name="email" class="form-control" value="<%- data.contact.email %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">İnstagram</label>
+                <div class="col-sm-10">
+                  <input type="text" name="instagram" class="form-control" value="<%- data.contact.instagram %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Youtube</label>
+                <div class="col-sm-10">
+                  <input type="text" name="youtube" class="form-control" value="<%- data.contact.youtube %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Vimeo</label>
+                <div class="col-sm-10">
+                  <input type="text" name="vimeo" class="form-control" value="<%- data.contact.vimeo %>" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Fotoğraf Seç</label>
+                <div class="col-sm-10">
+                  <input type="file" name="file" class="form-control" />
+                </div>
+              </div>
+
+              <button class="btn btn-outline-success" type="submit">
+                Güncelle !
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include("./layout/footer") %>

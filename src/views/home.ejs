@@ -1,0 +1,210 @@
+<%- include('layout/header') %>
+	<style>
+		.responive-slider-height {
+			height: 100vh;
+		}
+
+		.desktop {
+			display: block;
+		}
+
+		.mobile {
+			display: none;
+		}
+
+		@media (max-width: 991px) {
+			.responive-slider-height {
+				height: calc(100vh - 70px)
+			}
+
+			.desktop {
+				display: none;
+			}
+
+			.mobile {
+				display: block;
+			}
+		}
+	</style>
+
+	<!-- Slider
+		============================================= -->
+	<section id="slider" class="slider-element swiper_wrapper include-header responive-slider-height" data-loop="true"
+		data-speed="1000" data-autoplay="5000">
+		<div class="slider-inner">
+			<div class="swiper-container swiper-parent">
+				<div class="swiper-wrapper">
+					<% data?.homepageslider.forEach(el=> { %>
+						<div class="swiper-slide dark desktop">
+							<div class="swiper-slide-bg "
+								style="background-image: url('demos/store/<%= el.slider_image %>'); "></div>
+						</div>
+						<% }) %>
+							<% data?.homepagesliderMobile.forEach(el=> { %>
+								<div class="swiper-slide dark mobile">
+									<div class="swiper-slide-bg mobile"
+										style="background-image: url('demos/store/<%= el.slider_image %>'); "></div>
+								</div>
+								<% }) %>
+
+				</div>
+
+				<div class="social-icons">
+					<a href="<%= data?.contactData?.instagram %>"
+						class="social-icon si-small rounded-circle text-white bg-instagram">
+						<i class="bi-instagram text-white-50"></i>
+						<i class="bi-instagram"></i>
+					</a>
+					<a href="<%= data?.contactData?.youtube %>"
+						class="social-icon si-small rounded-circle text-white bg-youtube">
+						<i class="fa-brands fa-youtube text-white-50"></i>
+						<i class="fa-brands fa-youtube"></i>
+					</a>
+					<a href="<%= data?.contactData?.vimeo %>"
+						class="social-icon si-small rounded-circle text-white bg-vimeo">
+						<i class="fa-brands fa-vimeo text-white-50"></i>
+						<i class="fa-brands fa-vimeo"></i>
+					</a>
+				</div>
+			</div>
+	</section>
+
+	<!-- #Slider End -->
+
+	<!-- Content
+		============================================= -->
+	<section id="content">
+		<div class="content-wrap pb-0">
+			<div class="container-fluid">
+				<div class="mx-auto text-center mb-5" style="max-width: 700px">
+					<h2>EKİPMANLAR</h2>
+					<hr />
+				</div>
+			</div>
+
+			<div class="container-fluid">
+				<div class="row mt-2">
+					<% data?.categories.forEach(element=> { %>
+						<a href="/categories/<%- element.slug %>" class="col-md-3 mb-5">
+							<div class="card cat-card rounded-0 border-0 dark h-100" data-bs-theme="dark">
+								<img loading="lazy" data-src="demos/store/<%= element.category_image %>"
+									class="card-img rounded-0 h-100 w-100 object-fit-cover lazy" alt="...">
+								<div class="d-flex align-items-start flex-column card-img-overlay p-4"
+									style="background: rgba(0, 0, 0, 0.6)">
+									<h3 class="h2 text-white ls--1 fw-bold mb-4">
+										<%= element.category_name %>
+									</h3>
+								</div>
+							</div>
+						</a>
+						<% }) %>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid mt-5">
+			<div class="row">
+				<% data?.homepageDataa.forEach(element=> { %>
+					<div class="col-md-6 mb-5">
+						<img loading="lazy" style="object-fit: cover; height: 50%;width: 100%;"
+							data-src="/demos/store/<%= element.homeimages_image %>" alt="image" class="mb-4 lazy" />
+					</div>
+					<% }) %>
+			</div>
+		</div>
+		<%- include('partials/videos') %>
+			<div class="section mt-0 mb-0" style="padding: 80px 0">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-4 col-sm-6">
+							<h4 class="text-uppercase">Neden Bizi seçmelisiniz</h4>
+							<p>
+								<b>Deneyim:</b> Yılların getirdiği deneyim ve uzmanlıkla, projelerinizi hayallerinizin
+								ötesinde
+								gerçekleştirebiliyoruz. <br>
+
+								<b>Yaratıcılık:</b> Her işte özgün ve yaratıcı yaklaşımlar geliştirerek, sizi
+								rakiplerinizden ayırıyoruz.
+								<br>
+
+								<b>Profesyonellik:</b> Ekip arkadaşlarımız, ekipmanlarımız ve süreçlerde izlediğimiz yol
+								ile
+								her zaman
+								profesyonelliği garanti ediyoruz. <br>
+
+								<b>Müşteri Odaklılık:</b> Müşteri memnuniyeti bizim için önceliklidir ve her zaman
+								sizinle
+								iş birliği
+								yapmaktan
+								mutluluk duyarız.
+							</p>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<h4 class="text-uppercase">İletişim</h4>
+							<p>
+								İletişim adreslerimiz aşağıdadır</p>
+							<abbr title="Phone Number"><strong>Telefon :</strong></abbr>
+							<%= data?.contactData?.phone %><br />
+								<abbr title="Email Address"><strong>Email:</strong></abbr>
+								<%= data?.contactData?.email %><br />
+
+									<a href="<%= data?.contactData?.instagram %>"
+										class="social-icon si-small bg-light h-bg-instagram mt-4 me-2">
+										<i class="bi-instagram"></i>
+										<i class="bi-instagram"></i>
+									</a>
+									<a href="<%= data?.contactData?.youtube %>"
+										class="social-icon si-small bg-light h-bg-youtube mt-4 me-2">
+										<i class="fa-brands fa-youtube"></i>
+										<i class="fa-brands fa-youtube"></i>
+									</a>
+									<a href="<%= data?.contactData?.vimeo %>"
+										class="social-icon si-small bg-light h-bg-youtube mt-4 me-2">
+										<i class="fa-brands fa-vimeo"></i>
+										<i class="fa-brands fa-vimeo"></i>
+									</a>
+						</div>
+						<div class="col-md-4 col-sm-6">
+							<h4 class="text-uppercase">Adres</h4>
+							<address>
+								<strong>
+									<%= data?.contactData?.citys %>
+								</strong><br />
+								<%= data?.contactData?.adress %> <br />
+							</address>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section bg-transparent py-3">
+				<div class="container-fluid">
+					<div class="row justify-content-center m-auto" style="max-width: 1000px">
+						<div class="col-md-7">
+							<p class="h6 mb-0 text-muted">
+								Bütün ekipman kiralama işlemleri için bizimle iletişime
+								geçebilirsiniz
+								<a href="mailto:<%= data?.contactData?.email %>"><u>
+										<%= data?.contactData?.email %>
+									</u></a>
+								email adresimiz
+							</p>
+						</div>
+						<div class="col-md-5 mt-3 mt-md-0">
+							<h2 class="h1 fw-bold ls--1 color">
+								<a href="tel:0905318359340">
+									<%= data?.contactData?.phone %>
+								</a>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+	</section>
+
+	<!-- #content end -->
+
+	<%- include('layout/footer') %>

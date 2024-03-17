@@ -1,0 +1,42 @@
+<%- include("./layout/header",{categories:data?.categories}) %>
+<div class="page-body">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="sub-title">S.S.S Ekleme Bölümü</h4>
+          <br />
+          <form method="POST" action="/admin/sss/add">
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Soru</label>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  name="question"
+                  class="form-control"
+                  placeholder="Soru Yazınız"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Cevap</label>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  name="answer"
+                  class="form-control"
+                  placeholder="Cevabı Yazınız"
+                />
+              </div>
+            </div>
+
+            <button class="btn btn-outline-success" type="submit">
+              EKLE !
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./layout/footer") %>

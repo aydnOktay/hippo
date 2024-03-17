@@ -1,0 +1,102 @@
+<%- include('layout/header',{categories: data?.categories,contact:data?.contactServicee})%>
+
+  <section class="page-title page-title-parallax parallax scroll-detect dark include-header" style="padding: 250px 0">
+    <img src="/demos/store/bannersss.jpg" class="parallax-bg" />
+    <div class="container">
+      <div class="page-title-row">
+        <div class="page-title-content">
+          <h1>Hakkımızda</h1>
+          <span>Hakkımızda bilmek istediğiniz her şey</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- .page-title end -->
+
+  <section id="content">
+    <div class="content-wrap">
+      <div class="container"></div>
+
+      <div class="section m-0">
+        <div class="container">
+          <div class="row col-mb-50">
+            <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn">
+              <i class="i-plain i-xlarge mx-auto bi-signpost-split"></i>
+              <div class="counter counter-lined">
+                <span data-from="100" data-to="125" data-refresh-interval="50" data-speed="2000"></span>+
+              </div>
+              <h5>Reklam</h5>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="200">
+              <i class="i-plain i-xlarge mx-auto mb-0 bi-bezier"></i>
+              <div class="counter counter-lined">
+                <span data-from="3000" data-to="96" data-refresh-interval="100" data-speed="2500"></span>+
+              </div>
+              <h5>Film</h5>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="400">
+              <i class="i-plain i-xlarge mx-auto mb-0 bi-layers"></i>
+              <div class="counter counter-lined">
+                <span data-from="10" data-to="55" data-refresh-interval="25" data-speed="3500"></span>+
+              </div>
+              <h5>Sinema</h5>
+            </div>
+
+            <div class="col-sm-6 col-lg-3 text-center" data-animate="bounceIn" data-delay="600">
+              <i class="i-plain i-xlarge mx-auto mb-0 bi-clock"></i>
+              <div class="counter counter-lined">
+                <span data-from="60" data-to="645" data-refresh-interval="30" data-speed="2700"></span>+
+              </div>
+              <h5>Mutlu Müşteri</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-stretch">
+        <div class="col-md-5 col-padding min-vh-75" style="
+          background: url('/demos/store/<%= data?.aboutServicee?.about_images %>')
+            center center no-repeat;
+          background-size: cover;
+        "></div>
+
+        <div class="col-md-7 col-padding">
+          <div>
+            <div class="heading-block">
+              <h3>Hipporentpro</h3>
+            </div>
+
+            <div class="row col-mb-50">
+              <div class="col-lg-12">
+                <p>
+                  <%= data?.aboutServicee?.about_description %>
+                </p>
+                <div class="d-flex">
+                  <a href="<%= data?.contactServicee?.instagram %>"
+                    class="social-icon bg-light si-small border-transparent rounded-circle h-bg-instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="<%= data?.contactServicee?.youtube %>"
+                    class="social-icon bg-light si-small border-transparent rounded-circle h-bg-youtube">
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="<%= data?.contactServicee?.vimeo %>"
+                    class="social-icon bg-light si-small border-transparent rounded-circle h-bg-vimeo">
+                    <i class="fa-brands fa-vimeo"></i>
+                    <i class="fa-brands fa-vimeo"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- #content end -->
+
+  <%- include('layout/footer') %>
